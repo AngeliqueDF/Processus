@@ -25,9 +25,6 @@ public class Processus {
         else return "en cours";
     }
 
-    public String toString() {
-        return "pid " + pid + ": " + getStatus() + "\n";
-    }
 
     public void run() {
         if (this.estTermine()) return;
@@ -38,5 +35,9 @@ public class Processus {
             termine = true;
             throw new RuntimeException();
         }
+    }
+
+    public String toString() {
+        return "PID : " + getPID() + ". Statut : " + getStatus();
     }
 }
