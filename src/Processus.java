@@ -5,6 +5,9 @@ public class Processus {
     private boolean termine;
 
     public Processus(int nbe) {
+        if (nbe <= 0) {
+            throw new RuntimeException("Impossible de créer un process avec 0 ou moins instructions");
+        }
         instructions = nbe;
         termine = false;
     }
