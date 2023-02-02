@@ -18,4 +18,19 @@ public class CPU {
             System.out.println(p.toString());
         }
     }
+
+    public ArrayList<Processus> unTour2() {
+        ArrayList<Processus> res = new ArrayList<Processus>();
+        for (int i = 0; i < enCours.size(); i++) {
+            Processus p = enCours.get(i);
+            try {
+                p.run();
+                p.toString();
+            } catch (RuntimeException re) {
+                System.out.println(p.toString() + ": terminé dans ce tour. ");
+                res.add(p);
+            }
+        }
+        return res;
+    }
 }
