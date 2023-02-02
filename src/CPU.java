@@ -10,7 +10,11 @@ public class CPU {
     public void unTour() {
         for (int i = 0; i < enCours.size(); i++) {
             Processus p = enCours.get(i);
-            p.run();
+            try {
+                p.run();
+            } catch (RuntimeException re) {
+                System.out.println(p.toString() + ": terminé dans ce tours");
+            }
             System.out.println(p.toString());
         }
     }
